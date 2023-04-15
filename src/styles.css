@@ -30,6 +30,7 @@
 }
 
 .Chart1-Buttons {
+  font-size: large;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -44,6 +45,7 @@
 }
 
 .Chart2-Buttons {
+  font-size: large;
   display: flex;
   justify-content: center;
   gap: 20px;
