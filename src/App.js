@@ -89,7 +89,7 @@ const options2 = {
     },
     title: {
       display: true,
-      text: '得点チャート',
+      text: '日毎得点チャート',
       font: {
         size: 24,
       },

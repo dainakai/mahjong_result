@@ -1,3 +1,8 @@
+* {
+  margin : 0px;
+  padding : 0px;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -7,7 +12,16 @@
   /* height: 80vh; */
 }
 
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(27, 160, 160);
+  height : 10vh;
+}
+
 .Chart1 {
+  margin-top: 2vh;
   display: block;
   justify-content: center;
   width: 100%;
@@ -26,4 +40,10 @@
   justify-content: center;
   width: 100%;
   height: 80vh;
+}
+
+.Chart2-Buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
