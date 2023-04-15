@@ -189,11 +189,11 @@ export default function App() {
   };
 
   const onPanRight = (ref) => {
-    ref.current.pan({ x: -250 }, undefined, "default");
+    ref.current.pan({ x: -50 }, undefined, "default");
   };
 
   const onPanLeft = (ref) => {
-    ref.current.pan({ x: 250 }, undefined, "default");
+    ref.current.pan({ x: 50 }, undefined, "default");
   };
 
   return (
