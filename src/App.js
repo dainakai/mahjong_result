@@ -199,7 +199,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="Header">
-        <h1>Mahjong Score Charts</h1>
+        <b>Mahjong Score Charts</b>
       </div>
       <div className="Chart1">
         <Line ref={chartRef1} options={options1} data={data1} />

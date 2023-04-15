@@ -12,13 +12,13 @@
 }
 
 .Header {
-  font-size: x-large;
+  font-size: 6vmin;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(27, 160, 160);
   /* height : 10vh; */
-  padding : 4vh 0;
+  padding : 2vh 0;
 }
 
 .Chart1 {
