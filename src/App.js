@@ -43,12 +43,17 @@ const zoomOptions = {
   }
 };
 
+const isSmallScreen = window.innerWidth < 600;
+
 const options = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: "top"
+      position: isSmallScreen ? 'bottom' : 'top',
+      labels: {
+        boxWidth: isSmallScreen ? 20 : 40,
+      },
     },
     title: {
       display: true,
