@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mahjong_result/static/css/main.b1bea3b3.css",
-    "main.js": "/mahjong_result/static/js/main.7c1c0e6a.js",
+    "main.css": "/mahjong_result/static/css/main.27a88987.css",
+    "main.js": "/mahjong_result/static/js/main.e3ed37ed.js",
     "index.html": "/mahjong_result/index.html",
-    "main.b1bea3b3.css.map": "/mahjong_result/static/css/main.b1bea3b3.css.map",
-    "main.7c1c0e6a.js.map": "/mahjong_result/static/js/main.7c1c0e6a.js.map"
+    "main.27a88987.css.map": "/mahjong_result/static/css/main.27a88987.css.map",
+    "main.e3ed37ed.js.map": "/mahjong_result/static/js/main.e3ed37ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1bea3b3.css",
-    "static/js/main.7c1c0e6a.js"
+    "static/css/main.27a88987.css",
+    "static/js/main.e3ed37ed.js"
   ]
 }

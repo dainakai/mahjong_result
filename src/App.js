@@ -203,23 +203,23 @@ export default function App() {
       </div>
       <div className="Chart1">
         <Line ref={chartRef1} options={options1} data={data1} />
-        <div className="Chart1-Buttons">
+      </div>
+      <div className="Chart1-Buttons">
           <button className="Chart-Button" onClick={() => onResetZoom(chartRef1)}>zoom reset</button>
           <button className="Chart-Button" onClick={() => onZoomIn(chartRef1)}>+</button>
           <button className="Chart-Button" onClick={() => onZoomOut(chartRef1)}>-</button>
           <button className="Chart-Button" onClick={() => onPanRight(chartRef1)}>&gt;</button>
           <button className="Chart-Button" onClick={() => onPanLeft(chartRef1)}>&lt;</button>
-        </div>
       </div>
       <div className="Chart2">
         <Line ref={chartRef2} options={options2} data={data2} />
-        <div className="Chart2-Buttons">
+      </div>
+      <div className="Chart2-Buttons">
           <button className="Chart-Button" onClick={() => onResetZoom(chartRef2)}>zoom reset</button>
           <button className="Chart-Button" onClick={() => onZoomIn(chartRef2)}>+</button>
           <button className="Chart-Button" onClick={() => onZoomOut(chartRef2)}>-</button>
           <button className="Chart-Button" onClick={() => onPanRight(chartRef2)}>&gt;</button>
           <button className="Chart-Button" onClick={() => onPanLeft(chartRef2)}>&lt;</button>
-        </div>
       </div>
     </div>
   );

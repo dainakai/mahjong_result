@@ -23,10 +23,10 @@
 .Chart1 {
   margin-top: 2vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 90%;
   height: 80vh;
+  padding: 0% 5%;
 }
 
 .Chart1-Buttons {
@@ -39,10 +39,10 @@
 .Chart2 {
   margin-top: 10vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 90%;
   height: 80vh;
+  padding: 0% 5%;
 }
 
 .Chart2-Buttons {
