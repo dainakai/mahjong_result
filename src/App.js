@@ -32,11 +32,12 @@ const zoomOptions = {
     speed: 0.01,
   },
   zoom: {
+    enabled: true,
     wheel: {
-      enabled: true
+      enabled: false
     },
     pinch: {
-      enabled: true
+      enabled: false
     },
     mode: "x",
     speed: 0.00001,
@@ -45,26 +46,29 @@ const zoomOptions = {
 
 const isSmallScreen = window.innerWidth < 600;
 
-const options = {
+const options1 = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: isSmallScreen ? 'bottom' : 'top',
+      position: 'top',
       labels: {
         boxWidth: isSmallScreen ? 20 : 40,
       },
     },
     title: {
       display: true,
-      text: "Mahjong Score Chart"
+      text: '累積得点チャート',
+      font: {
+        size: 24,
+      },
     },
     zoom: zoomOptions,
     tooltip: {
       titleFont: { size: 17 },
-      bodyFont: { size: 17 },
+      bodyFont: { size: 24 },
       titleMarginBottom: 15,
-      backgroundColor: "rgba(255,112,162,0.8)",
+      backgroundColor: "rgba(180,180,180,0.6)",
       titleColor: "rgba(0,0,0,1)",
       bodyColor: "rgba(0,0,0,1)",
       displayColors: true,
@@ -73,6 +77,38 @@ const options = {
   }
 };
 
+const options2 = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      position: 'top',
+      labels: {
+        boxWidth: isSmallScreen ? 20 : 40,
+      },
+    },
+    title: {
+      display: true,
+      text: '得点チャート',
+      font: {
+        size: 24,
+      },
+    },
+    zoom: zoomOptions,
+    tooltip: {
+      titleFont: { size: 17 },
+      bodyFont: { size: 24 },
+      titleMarginBottom: 15,
+      backgroundColor: "rgba(180,180,180,0.6)",
+      titleColor: "rgba(0,0,0,1)",
+      bodyColor: "rgba(0,0,0,1)",
+      displayColors: true,
+      xAlign: "center"
+    },
+  }
+};
+
+// ラベルの定義
 const labels = [];
 const formattedLabels = [];
 const firstUser = Data.UserInfo[0];
@@ -87,15 +123,29 @@ for (const key in firstUser) {
     formattedLabels.push(formattedDate);
   }
 }
-// const labels = ["1", "2"];
 
-const data = {
+// チャート1,2のデータ定義
+const data1 = {
+  labels,
+  datasets: []
+};
+
+const data2 = {
   labels,
   datasets: []
 };
 
 for (const user of Data.UserInfo) {
-  const dataset = {
+  const dataset1 = {
+    label: user.name,
+    data: [],
+    borderColor: user.color,
+    backgroundColor: user.color,
+    pointRadius : 10,
+    pointHoverRadius: 50,
+    spanGaps: true
+  };
+  const dataset2 = {
     label: user.name,
     data: [],
     borderColor: user.color,
@@ -109,28 +159,68 @@ for (const user of Data.UserInfo) {
     const date = labels[i];
     const score = user[date];
     if (score === undefined){
-      dataset.data.push(null);
+      dataset1.data.push(null);
+      dataset2.data.push(null);
       continue;
     }
     sumscore = sumscore + score;
-    dataset.data.push(sumscore);
+    dataset1.data.push(sumscore);
+    dataset2.data.push(score);
     // dataset.data.push(sumscore);
   }
-  data.datasets.push(dataset);
+  data1.datasets.push(dataset1);
+  data2.datasets.push(dataset2);
 }
 
-
 export default function App() {
-  const chartRef = useRef(null);
+  const chartRef1 = useRef(null);
+  const chartRef2 = useRef(null);
 
-  const onResetZoom = () => {
-    chartRef.current.resetZoom();
+  const onResetZoom = (ref) => {
+    ref.current.resetZoom();
+  };
+
+  const onZoomIn = (ref) => {
+    ref.current.zoom(1.1);
+  };
+
+  const onZoomOut = (ref) => {
+    ref.current.zoom(0.9);
+  };
+
+  const onPanRight = (ref) => {
+    ref.current.pan({ x: -250 }, undefined, "default");
+  };
+
+  const onPanLeft = (ref) => {
+    ref.current.pan({ x: 250 }, undefined, "default");
   };
 
   return (
     <div className="App">
-      <Line ref={chartRef} options={options} data={data} />
-      <button onClick={onResetZoom}>zoom reset</button>
+      <div className="Header">
+        <h1>Mahjong Score Charts</h1>
+      </div>
+      <div className="Chart1">
+        <Line ref={chartRef1} options={options1} data={data1} />
+        <div className="Chart1-Buttons">
+          <button onClick={() => onResetZoom(chartRef1)}>zoom reset</button>
+          <button onClick={() => onZoomIn(chartRef1)}>+</button>
+          <button onClick={() => onZoomOut(chartRef1)}>-</button>
+          <button onClick={() => onPanRight(chartRef1)}>&gt;</button>
+          <button onClick={() => onPanLeft(chartRef1)}>&lt;</button>
+        </div>
+      </div>
+      <div className="Chart2">
+        <Line ref={chartRef2} options={options2} data={data2} />
+        <div className="Chart2-Buttons">
+          <button onClick={() => onResetZoom(chartRef2)}>zoom reset</button>
+          <button onClick={() => onZoomIn(chartRef2)}>+</button>
+          <button onClick={() => onZoomOut(chartRef2)}>-</button>
+          <button onClick={() => onPanRight(chartRef2)}>&gt;</button>
+          <button onClick={() => onPanLeft(chartRef2)}>&lt;</button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -4,5 +4,26 @@
   display: block;
   justify-content: center;
   width: 100%;
+  /* height: 80vh; */
+}
+
+.Chart1 {
+  display: block;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.Chart1-Buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Chart2 {
+  margin-top: 10vh;
+  display: block;
+  justify-content: center;
+  width: 100%;
   height: 80vh;
 }
