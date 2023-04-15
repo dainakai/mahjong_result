@@ -22,7 +22,8 @@
 
 .Chart1 {
   margin-top: 2vh;
-  display: block;
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 90%;
   height: 80vh;
@@ -37,7 +38,8 @@
 
 .Chart2 {
   margin-top: 10vh;
-  display: block;
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 90%;
   height: 80vh;
