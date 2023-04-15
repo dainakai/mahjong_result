@@ -1,7 +1,7 @@
-/* * {
+* {
   margin : 0px;
   padding : 0px;
-} */
+}
 
 .App {
   font-family: sans-serif;
@@ -16,8 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: rgb(27, 160, 160); */
+  background-color: rgb(27, 160, 160);
   height : 10vh;
+  padding : 10% 0;
 }
 
 .Chart1 {
