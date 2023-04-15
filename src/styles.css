@@ -17,8 +17,8 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(27, 160, 160);
-  height : 10vh;
-  padding : 10% 0;
+  /* height : 10vh; */
+  padding : 4vh 0;
 }
 
 .Chart1 {
@@ -45,8 +45,11 @@
 }
 
 .Chart2-Buttons {
-  font-size: large;
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.Chart-Button {
+  font-size: large;
 }
