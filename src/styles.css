@@ -12,6 +12,7 @@
 }
 
 .Header {
+  font-size: x-large;
   display: flex;
   align-items: center;
   justify-content: center;
