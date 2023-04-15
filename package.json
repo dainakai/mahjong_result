@@ -1,0 +1,49 @@
+{
+  "name": "mahjong_result",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "chartjs": "^0.3.24",
+    "chartjs-plugin-zoom": "^2.0.1",
+    "hammer": "^0.0.5",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^3.0.4",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "rm": "rm -rf docs",
+    "mv": "mv build docs",
+    "git": "git add . && git commit && git push origin master",
+    "deploy": "npm run rm && npm run build && npm run mv && npm run git"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "chart.js": "^4.2.1",
+    "react-chartjs-2": "^5.2.0"
+  },
+  "homepage": "https://dainakai.github.io/mahjong_result/"
+}
